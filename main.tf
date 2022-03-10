@@ -41,7 +41,7 @@ resource "aws_vpc" "craigs_vpc" {
   tags = {
     Name = "craigs_vpc"
   }
-}}
+}
 
 /*
 locals {
