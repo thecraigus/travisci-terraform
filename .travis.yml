@@ -63,7 +63,9 @@ jobs:
 
       # Terraform Apply: Only when pushing direct to master, or when PR merge into master
       if: type IN (push) and branch = master
-
+      
+      before_install:
+        - sudo apt-get install unzip
       install:
         # Download and install terraform before each run
         - wget https://releases.hashicorp.com/terraform/"$tf_version"/terraform_"$tf_version"_linux_amd64.zip
