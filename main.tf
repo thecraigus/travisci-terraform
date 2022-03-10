@@ -35,6 +35,14 @@ resource "aws_vpc" "aws_vpc" {
   }
 }
 
+resource "aws_vpc" "craigs_vpc" {
+  cidr_block = "172.23.0.0/16"
+
+  tags = {
+    Name = "craigs_vpc"
+  }
+}
+
 /*
 locals {
   cisco_asav_name       = "CiscoASAv"  # Just for fun, name your ASAv anything you'd like!
