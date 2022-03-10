@@ -27,6 +27,15 @@ module "bootstrap" {
   aws_iam_policy_assume_name  = "IamPolicyAssume"
 }
 
+resource "aws_vpc" "aws_vpc" {
+  cidr_block = "172.55.0.0/16"
+
+  tags = {
+    Name = "CraigsVPC"
+  }
+}
+
+
 /*
 locals {
   cisco_asav_name       = "CiscoASAv"  # Just for fun, name your ASAv anything you'd like!
