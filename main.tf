@@ -27,6 +27,14 @@ module "bootstrap" {
   aws_iam_policy_assume_name  = "IamPolicyAssume"
 }
 
+resource "aws_vpc" "aws_vpc" {
+  cidr_block = "172.16.0.0/16"
+
+  tags = {
+    Name = "AwsVpc"
+  }
+}
+
 /*
 locals {
   cisco_asav_name       = "CiscoASAv"  # Just for fun, name your ASAv anything you'd like!
@@ -35,13 +43,6 @@ locals {
   asav_public_facing_ip = "172.16.20.10"
 }
 
-resource "aws_vpc" "aws_vpc" {
-  cidr_block = "172.16.0.0/16"
-
-  tags = {
-    Name = "AwsVpc"
-  }
-}
 
 resource "aws_internet_gateway" "internet_gateway" {
   vpc_id = aws_vpc.aws_vpc.id
