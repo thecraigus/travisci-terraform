@@ -45,7 +45,7 @@ resource "aws_vpc" "craigs_vpc" {
 
 }
 
-/*
+
 locals {
   cisco_asav_name       = "CiscoASAv"          # Just for fun, name your ASAv anything you'd like!
   my_public_ip          = "92.40.27.115/32"    # Update this to your public IP when deploying
@@ -206,7 +206,7 @@ resource "aws_eip" "cisco_asav_elastic_public_ip" {
 # Build the ASAv
 resource "aws_instance" "cisco_asav" {
   # This AMI is only valid in us-east-1 region, with this specific instance type
-  ami           = "ami-0edeb8fb244c4d161"
+  ami           = "ami-01426821ff0f3a449"
   instance_type = "c5.xlarge"
   key_name      = local.ssh_key_name
 
@@ -230,4 +230,3 @@ resource "aws_instance" "cisco_asav" {
 output "asav_public_ip" {
   value = aws_eip.cisco_asav_elastic_public_ip.public_ip
 }
-*/
