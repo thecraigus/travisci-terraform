@@ -44,7 +44,6 @@ resource "aws_vpc" "craigs_vpc" {
 
 
 }
-
 /*
 locals {
   cisco_asav_name       = "CiscoASAv"          # Just for fun, name your ASAv anything you'd like!
